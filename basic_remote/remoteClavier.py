@@ -29,6 +29,7 @@ while True:
     elif lettre == "e" : 
         if vitesse > 70 : 
             vitesse = vitesse - 10 
+
     
 
 
