@@ -55,7 +55,7 @@ while continuer:
             spytank.gauche(vitesse)
         elif direction == 4 :
             spytank.droite(vitesse)
-elif lettre == "f":
-    continuer = False
-    spytank.stop()
-time.sleep(1)
+    elif lettre == "f":
+        continuer = False
+        spytank.stop()
+time.sleep(1) 
