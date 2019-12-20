@@ -16,7 +16,7 @@ class newDetecteur(Thread):
         while True:
             #le code a executer durant l'operation
             distance = spytank.litDistance()
-            if distance < 10:
+            if distance < 5:
                 self.stop = True 
                 spytank.stop = True
                 os.system("mpg321 bip.mp3")
