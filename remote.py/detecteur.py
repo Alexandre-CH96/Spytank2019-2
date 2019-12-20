@@ -2,6 +2,7 @@ import spytank
 from threading import Thread 
 from gtts import tts
 import os 
+import time
 
 class newDetecteur(Thread):
 
@@ -12,11 +13,14 @@ class newDetecteur(Thread):
         self.audio.save("bip.mp3")
 
     def run(self):
-        #le code a executer durant l'operation
-        distance = spytank.litDistance()
-        if distance < 10:
-            self.stop = True 
-            os.system("mpg321 bip.mp3")
-
-        else:
-            self.stop = False
+        while True:
+            #le code a executer durant l'operation
+            distance = spytank.litDistance()
+            if distance < 10:
+                self.stop = True 
+                spytank.stop = True
+                os.system("mpg321 bip.mp3")
+            else:
+                self.stop = False
+            
+            time.sleep(0.2)
